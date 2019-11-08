@@ -113,3 +113,25 @@ rule46 = ctrl.Rule(user_temp['poor'] | tdf['good'] | dew['good'] | ev['good'], c
 rule47 = ctrl.Rule(user_temp['average'] | tdf['good'] | dew['good'] | ev['good'], cs['fast'],fan_speed['fast'] ,mo['ac'],fn['toward'])
 rule48 = ctrl.Rule(user_temp['good'] | tdf['good'] | dew['good'] | ev['good'], cs['fast'],fan_speed['fast'] ,mo['ac'],fn['toward'])
 rule1.view()
+
+tipping_ctrl = ctrl.ControlSystem([rule1, rule2, rule3,rule4,rule5,rule6,rule7, rule8, rule9,rule10,rule11,rule12,
+                                   rule13, rule14, rule15,rule16,rule17,rule18,rule19, rule20, rule21,rule22,rule23,rule24,
+                                   rule25, rule26, rule27,rule28,rule29,rule30,rule31, rule32, rule33,rule34,rule35,rule36,
+                                  rule37, rule38, rule39,rule40,rule41,rule42,rule43, rule44, rule45,rule46,rule47,rule48])
+tipping = ctrl.ControlSystemSimulation(tipping_ctrl)
+# Pass inputs to the ControlSystem using Antecedent labels with Pythonic API
+# Note: if you like passing many inputs all at once, use .inputs(dict_of_data)
+tipping.input['user_temp'] = 10
+tipping.input['dew'] = 10
+tipping.input['tdf'] = 10
+tipping.input['ev'] = 10
+# Crunch the numbers
+tipping.compute()
+print (tipping.output['fn'])
+print (tipping.output['cs'])
+print (tipping.output['mo'])
+print (tipping.output['fan_speed'])
+fn.view(sim=tipping)
+cs.view(sim=tipping)
+mo.view(sim=tipping)
+fan_speed.view(sim=tipping)
