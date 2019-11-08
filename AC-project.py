@@ -20,3 +20,21 @@ user_temp.automf(3)
 dew.automf(3)
 tdf.automf(5)
 ev.automf(3)
+
+# Pythonic API
+'''user_temp['poor'] = fuzz.trimf(fan_speed.universe, [0, 16, 25])
+user_temp['average'] = fuzz.trimf(fan_speed.universe, [0, 22, 28])
+user_temp['good'] = fuzz.trimf(fan_speed.universe, [25, 70, 100])
+# Custom membership functions can be built interactively with a familiar,
+# Pythonic API
+ev['low'] = fuzz.trimf(fan_speed.universe, [0, 130, 180])
+ev['regular'] = fuzz.trimf(fan_speed.universe, [0, 170, 220])
+
+tdf['negative']=fuzz.trimf(fan_speed.universe, [0,-1,0])
+tdf['zero']=fuzz.trimf(fan_speed.universe, [0,-0.5,0.5])
+tdf['positive']=fuzz.trimf(fan_speed.universe, [0,0,2])
+tdf['laege']=fuzz.trimf(fan_speed.universe, [0,1,3])
+
+dew['average'] = fuzz.trimf(fan_speed.universe, [0, 10, 14])
+dew['good'] = fuzz.trimf(fan_speed.universe, [0, 12, 18])
+'''
