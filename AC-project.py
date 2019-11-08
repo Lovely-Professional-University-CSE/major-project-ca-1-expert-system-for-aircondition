@@ -38,3 +38,28 @@ tdf['laege']=fuzz.trimf(fan_speed.universe, [0,1,3])
 dew['average'] = fuzz.trimf(fan_speed.universe, [0, 10, 14])
 dew['good'] = fuzz.trimf(fan_speed.universe, [0, 12, 18])
 '''
+print("working")
+cs['low'] = fuzz.trimf(cs.universe, [0, 0, 40])
+cs['medium'] = fuzz.trimf(cs.universe, [0, 30, 70])
+cs['fast'] = fuzz.trimf(cs.universe, [25, 60, 100])
+
+fn['away'] = fuzz.trimf(fn.universe, [0, 10, 70])
+fn['toward'] = fuzz.trimf(fn.universe, [0, 30, 90])
+
+mo['ac'] = fuzz.trimf(mo.universe, [0, 0, 0.5])
+mo['de'] = fuzz.trimf(mo.universe, [0, 0.5, 0.9])
+fan_speed['low'] = fuzz.trimf(fan_speed.universe, [0, 0, 50])
+fan_speed['medium'] = fuzz.trimf(fan_speed.universe, [0, 40, 80])
+fan_speed['fast'] = fuzz.trimf(fan_speed.universe, [25, 50,100])
+##
+# You can see how these look with .view()
+user_temp['average'].view()
+dew.view()
+tdf.view()
+ev.view()
+fan_speed.view()
+cs.view()
+fn.view()
+mo.view()
+print("hello")
+##
